@@ -7,3 +7,4 @@
  - [python_variable_annotations](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/python_variable_annotations)
   - [python_async_function](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/python_async_function)
    - [python_async_comprehension](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/python_async_comprehension)
+   - [NoSQL](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/NoSQL)
