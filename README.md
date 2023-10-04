@@ -9,4 +9,4 @@
    - [python_async_comprehension](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/python_async_comprehension)
    - [NoSQL](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/NoSQL)
 - [pagination](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/pagination)
-- [ES6_promise](https://github.com/Qcarvalhooliveira/holbertonschool-web_back_end/tree/master/ES6_promise)
+- [ES6_promise](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/ES6_promise)
