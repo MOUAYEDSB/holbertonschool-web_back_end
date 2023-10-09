@@ -12,3 +12,4 @@
 - [ES6_promise](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/ES6_promise)
 - [ES6_classes](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/ES6_classes)
 - [ES6_basic](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/ES6_basic)
+- [ES6_data_manipulation](https://github.com/MOUAYEDSB/holbertonschool-web_back_end/tree/main/ES6_data_manipulation)
