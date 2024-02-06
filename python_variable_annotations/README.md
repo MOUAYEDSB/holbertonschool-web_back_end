@@ -1,5 +1,5 @@
 # Python - Variable Annotations 💻
-<img src="/holbertonschool-web_back_end/python_variable_annotations/images/readme.png" alt="python-img-project ">
+<img src="images/readme.png" alt="python-img-project ">
 # Description: 💬
 - Variable annotations in Python involve specifying the expected type of a variable using type hints. These hints provide information about the data type the variable should hold, enhancing code readability and assisting static analysis tools. Although variable annotations are optional, they aid in conveying intentions clearly and can be valuable for documentation and maintaining code quality.
 
