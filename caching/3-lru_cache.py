@@ -71,3 +71,4 @@ if __name__ == "__main__":
     my_cache.print_cache()
     my_cache.put("K", "K")
     my_cache.print_cache()
+
