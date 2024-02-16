@@ -1,9 +1,4 @@
 # Pagination 💻
-<img src="images/pic-cat1.png" alt="python-img-project ">
-
-<img src="images/pic-cat2.png" alt="python-img-project ">
-
-<img src="images/pic-cat3.png" alt="python-img-project ">
 # Description 💬
 - Pagination in programming refers to the process of dividing a large set of data into smaller, more manageable chunks or pages. This is commonly used in applications and websites that display lists of information, such as search results, product listings, or social media feeds, where showing all the data at once would be impractical and overwhelming.
 # What we should learn from this project: 📑
