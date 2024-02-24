@@ -1,4 +1,4 @@
-# Personal Data Protection Project
+# Personal Data Project
 
 <img src="image/Personal-data.webp" alt="python-img-project ">
 
