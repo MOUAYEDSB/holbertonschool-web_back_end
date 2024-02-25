@@ -1,6 +1,11 @@
 # Simple API
 
+<img src="image/personal_data.jpg" alt="Alt Text">
+
+
 Simple HTTP API for playing with `User` model.
+
+Basic authentication is a straightforward authentication scheme integrated into the HTTP protocol, allowing an HTTP user agent, like a web browser, to provide a username and password with a request. In this method, the username and password are joined with a colon, base64-encoded, and sent in the Authorization header of the HTTP request. However, since base64 encoding is easily reversible, Basic Authentication is considered insecure over unencrypted connections, making it essential to use it over HTTPS to protect credentials from interception. Although simple and widely supported, Basic Authentication's lack of features such as token expiration and revocation makes it less suitable for complex or security-sensitive applications
 
 
 ## Files
@@ -40,3 +45,7 @@ $ API_HOST=0.0.0.0 API_PORT=5000 python3 -m api.v1.app
 - `DELETE /api/v1/users/:id`: deletes an user based on the ID
 - `POST /api/v1/users`: creates a new user (JSON parameters: `email`, `password`, `last_name` (optional) and `first_name` (optional))
 - `PUT /api/v1/users/:id`: updates an user based on the ID (JSON parameters: `last_name` and `first_name`)
+
+## Authors
+
+- [Mouayed sabbagh](https://github.com/MOUAYEDSB)
