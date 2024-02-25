@@ -3,11 +3,31 @@
 Authentication module for the API
 """
 
-from api.v1.auth.auth import Auth
-import base64
-from typing import TypeVar
-from models.user import User
+from typing import List
 
+class Auth:
+    """ Auth class """
+
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
+        """ Checks if a path requires authentication.
+        """
+        if path is None or not isinstance(path, str) or not path:
+            return True
+
+        if excluded_paths is None or not isinstance(excluded_paths, list):
+            return True
+
+        if path[-1] == '/':
+            path = path[:-1]
+
+        for excluded_path in excluded_paths:
+            if excluded_path[-1] == '*':
+                if path.startswith(excluded_path[:-1]):
+                    return False
+            elif path == excluded_path:
+                return False
+
+        return True
 
 class BasicAuth(Auth):
     """Class to manage basic authentication.
@@ -50,13 +70,17 @@ class BasicAuth(Auth):
     def extract_user_credentials(
         self, decoded_base64_authorization_header: str
     ) -> {str, str}:
-        """Returns the user email and password from the Base64."""
+        """Returns the user email and password from the Base64.
+        """
         if decoded_base64_authorization_header is None \
            or not isinstance(decoded_base64_authorization_header, str):
             return None, None
 
-        # Split only on the first occurrence of colon
-        user_email, user_password = decoded_base64_authorization_header.split(':', 1)
+        if ':' not in decoded_base64_authorization_header:
+            return None, None
+
+        user_email, user_password = \
+            decoded_base64_authorization_header.split(':', 1)
         return user_email, user_password
 
     def user_object_from_credentials(
