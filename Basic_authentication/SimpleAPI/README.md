@@ -1,7 +1,5 @@
 # Simple API
 
-<img src="image/image-blz-blog-http-authentification.webp" alt="python-img-project ">
-
 Simple HTTP API for playing with `User` model.
 
 
