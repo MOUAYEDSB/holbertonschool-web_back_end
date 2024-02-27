@@ -36,7 +36,7 @@ User authentication service is a security mechanism designed to verify the ident
 
 ## Author ✒️
 
-Queise Carvalho de Oliveira - Queise Oliveira
+- [Mouayed sabbagh](https://github.com/MOUAYEDSB)
 
 ## License 📃
 
