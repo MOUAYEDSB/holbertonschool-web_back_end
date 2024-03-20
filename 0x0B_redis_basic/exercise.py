@@ -1,6 +1,7 @@
 import redis
 import uuid
-from typing import Union, Callable, Optional
+from typing import Union, Callable
+from functools import wraps
 
 class Cache:
     def __init__(self):
@@ -14,17 +15,27 @@ class Cache:
         self._redis.set(name=key, value=data)
         return key
 
-    def get(self, key: str, fn: Optional[Callable] = None) -> Union[str, bytes, int, float, None]:
+    def get(self, key: str, fn: Callable = None) -> Union[str, bytes, int, float, None]:
         """Retrieve and optionally convert data from Redis by key."""
         value = self._redis.get(name=key)
         if value is not None and fn:
             return fn(value)
         return value
 
-    def get_str(self, key: str) -> Optional[str]:
-        """Retrieve a string from Redis."""
-        return self.get(key, fn=lambda d: d.decode("utf-8"))
+    def count_calls(method: Callable) -> Callable:
+        """A decorator that counts how many times a method is called."""
+        @wraps(method)
+        def wrapper(self, *args, **kwargs):
+            key = method.__qualname__
+            count_key = f"{key}:count"
+            self._redis.incr(count_key)
+            return method(self, *args, **kwargs)
+        return wrapper
 
-    def get_int(self, key: str) -> Optional[int]:
-        """Retrieve an integer from Redis."""
-        return self.get(key, fn=int)
+    @count_calls
+    def store(self, data: Union[str, bytes, int, float]) -> str:
+        """Store the input data in Redis using a random key."""
+        key = str(uuid.uuid4())
+        self._redis.set(name=key, value=data)
+        return key
+    
