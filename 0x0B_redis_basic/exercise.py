@@ -1,12 +1,7 @@
-#!/usr/bin/env python3
-"""
-Cache Module
-"""
 import redis
 import uuid
 from typing import Union, Callable, Optional
 from functools import wraps
-
 
 def count_calls(method: Callable) -> Callable:
     """A decorator that counts how many times a method is called."""
@@ -16,7 +11,6 @@ def count_calls(method: Callable) -> Callable:
         self._redis.incr(key)
         return method(self, *args, **kwargs)
     return wrapper
-
 
 def call_history(method: Callable) -> Callable:
     """Decorator to store the history of inputs and outputs for a function."""
@@ -33,7 +27,6 @@ def call_history(method: Callable) -> Callable:
 
         return result
     return wrapper
-
 
 class Cache:
     def __init__(self):
@@ -66,8 +59,7 @@ class Cache:
         return self.get(key, fn=int)
 
     def replay(self, method: Callable):
-        """ Display the history of calls of a particular function."""
-
+        """Display the history of calls of a particular function."""
         method_name = method.__qualname__
         inputs_key = f"{method_name}:inputs"
         outputs_key = f"{method_name}:outputs"
@@ -77,5 +69,4 @@ class Cache:
 
         print(f"{method_name} was called {len(inputs_list)} times:")
         for input_str, output_str in zip(inputs_list, outputs_list):
-            print(f"{method_name}(*{input_str.decode('utf-8')}) ->
-                  {output_str.decode('utf-8')}")
+            print(f"{method_name}(*{input_str.decode('utf-8')}) -> {output_str.decode('utf-8')}")
