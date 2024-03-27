@@ -1,6 +1,6 @@
 # Unittests in JS 💻
 
-<img src="image/readme.jpeg" alt="Alt Text">
+<img src="image/readme.jpeg" alt="Alt Text"> 
 
 ## Description: 💬
 
